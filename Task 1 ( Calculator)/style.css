@@ -1,0 +1,160 @@
+    :root {
+      --bg-dark: linear-gradient(135deg, #0a0f2c, #1e293b);
+      --bg-light: linear-gradient(135deg, #f0f2f5, #e5e7eb);
+      --calc-dark: rgba(20, 25, 50, 0.85);
+      --calc-light: rgba(255, 255, 255, 0.85);
+      --btn-dark: linear-gradient(145deg, #1b1f38, #27304e);
+      --btn-light: linear-gradient(145deg, #f3f4f6, #e0e3eb);
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: var(--bg-dark);
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      transition: 0.5s;
+      padding: 10px;
+    }
+
+    body.light {
+      background: var(--bg-light);
+      color: #000;
+    }
+
+    .title {
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+      font-weight: 600;
+      font-size: 1.6rem;
+      text-align: center;
+      color: inherit;
+    }
+
+    .calculator {
+      width: 100%;
+      max-width: 380px;
+      padding: 30px;
+      border-radius: 30px;
+      background: var(--calc-dark);
+      backdrop-filter: blur(15px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+      transition: 0.4s;
+    }
+
+    body.light .calculator {
+      background: var(--calc-light);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .screen {
+      width: 100%;
+      height: 90px;
+      background: rgba(255, 255, 255, 0.05);
+      border: none;
+      border-radius: 25px;
+      color: #fff;
+      font-size: 32px;
+      text-align: right;
+      padding: 20px;
+      margin-bottom: 25px;
+      box-shadow: inset 0 6px 15px rgba(0, 0, 0, 0.3);
+      overflow-x: auto;
+      font-weight: 500;
+    }
+
+    body.light .screen {
+      background: rgba(255, 255, 255, 0.6);
+      color: #000;
+    }
+
+    .btn {
+      height: 60px;
+      border-radius: 18px;
+      font-size: 18px;
+      border: none;
+      background: var(--btn-dark);
+      color: #fff;
+      transition: 0.3s;
+      backdrop-filter: blur(5px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    body.light .btn {
+      background: var(--btn-light);
+      color: #000;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .btn:active {
+      transform: scale(0.95);
+    }
+
+    .operator {
+      background: linear-gradient(145deg, #7a5f8c, #a178aa);
+    }
+
+    .equal {
+      background: linear-gradient(145deg, #d97e7e, #f5a3a3);
+    }
+
+    .special {
+      background: linear-gradient(145deg, #3a4a5a, #5c6b7d);
+    }
+
+    .math {
+      background: linear-gradient(145deg, #4b5667, #6c7482);
+    }
+
+    .toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      width: 46px;
+      height: 26px;
+      border-radius: 20px;
+      background: #1e293b;
+      display: flex;
+      align-items: center;
+      padding: 4px;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    .toggle span {
+      width: 18px;
+      height: 18px;
+      background: #fff;
+      border-radius: 50%;
+      transition: 0.3s;
+    }
+
+    body.light .toggle {
+      background: #d1d5db;
+    }
+
+    body.light .toggle span {
+      transform: translateX(20px);
+    }
+
+    /* Responsive adjustments */
+    @media(max-width:400px) {
+      .screen {
+        height: 70px;
+        font-size: 24px;
+        padding: 12px 15px;
+      }
+
+      .btn {
+        height: 50px;
+        font-size: 16px;
+      }
+    }
