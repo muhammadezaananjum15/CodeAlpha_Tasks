@@ -28,5 +28,6 @@ items.forEach((item) => {
   });
 });
 
+
 closeModal.onclick = () => modal.classList.remove('active');
 modal.onclick = (e) => e.target === modal && modal.classList.remove('active');
